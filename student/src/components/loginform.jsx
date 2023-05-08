@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 export const Loginform = () => {
     const [profile, setProfile] = useState('')
     const [password, setPassword] = useState('')
+    
     const nav = useNavigate()
 
     const handleProfile = (e) => {
@@ -22,11 +23,11 @@ export const Loginform = () => {
         const checking = fakedata.filter((usuario) => { return usuario.profile === profile && usuario.password === password })
         if (checking.length > 0) {
             console.log("El usuario y contraseña coinciden.");
+            console.log(checking)
             nav("/home")
         } else {
             console.log("El usuario o contraseña son incorrectos");
         }
-
     }
 
     return (

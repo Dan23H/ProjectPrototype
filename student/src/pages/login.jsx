@@ -1,7 +1,10 @@
-import {Loginform} from "../components/loginform"
+import { Loginform } from "../components"
+
+
 
 export const Login = () => {
-    return(
+
+    return (
         <>
             <Loginform />
         </>
