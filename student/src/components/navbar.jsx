@@ -5,7 +5,7 @@ export const Navbar = ({data}) => {
             <img src="" alt="Asesorías CEA (LOGO)" />
             <br />
             <Link to="/perfil">
-                <label>Estudiante: </label>
+                <label>Estudiante: {data.profile}</label>
             </Link>
             <br />
             <Link to="/agenda">
