@@ -4,6 +4,7 @@ import "../../styles/Home.css"
 export const HomeContent = ({ type }) => {
     const handleBuscar = (e) => {
         e.preventDefault()
+        alert('holi')
         // Comando para buscar en mongoDB
     }
     return (
@@ -34,7 +35,7 @@ export const HomeContent = ({ type }) => {
                     </tr>
                 </tbody>
             </table>
-            <Button className="button"variant="success" onClick={handleBuscar}>Buscar</Button>
+            <Button className="button"variant="success" onClick={(event) => handleBuscar(event)}>Buscar</Button>
             <label className='red-label'>Horarios Disponibles</label>
             <br />
             <Button variant="success">Solicitar</Button>

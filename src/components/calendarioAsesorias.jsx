@@ -29,7 +29,7 @@ const styles = {
 };
 const CalendarioAsesorias = ({ eventos }) => {
   return (
-    <div style={{ height: '500pt', }}>
+    <div style={{ height: '500pt', paddingLeft: '5%', paddingRight: '5%' }}>
       <Calendar
         localizer={localizer}
         events={eventos}

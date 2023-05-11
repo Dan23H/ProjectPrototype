@@ -26,7 +26,7 @@ export const eventos = [
 export const AsesoriasProgramadas = () => {
   return (
     <div>
-      <h2 className='red-label'>Asesorías programadas</h2>
+      <h2 className='red-label' style={{paddingTop:'1%', paddingBottom:'1%'}}>Asesorías programadas</h2>
       <CalendarioAsesorias  eventos={eventos} />
     </div>
   );

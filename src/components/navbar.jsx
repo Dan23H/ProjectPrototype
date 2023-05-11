@@ -13,19 +13,19 @@ export const Navbar = ({ data }) => {
         <ul>
           <li>
             <Link to="/misAsesorias">
-              <a>Mis Asesorias</a>
+              <span>Mis Asesorias</span>
             </Link>
           </li>
           <li>
             <Link to="/home">
-              <a>Asesorias Academicas</a>
+              <span>Asesorias Academicas</span>
             </Link>
           </li>
         </ul>
       </div>
       <div className="right-side">
         <Link to="/">
-          <a>Cerrar Sesion</a>
+          <span>Cerrar Sesion</span>
         </Link>
       </div>
     </nav>
