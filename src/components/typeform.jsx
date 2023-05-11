@@ -4,7 +4,6 @@ import "../../styles/TypeForm.css";
 export const TypeForm = ({ tipo, setTipo }) => {
   const handleType = (e) => {
     setTipo(e.target.value);
-    alert(e.target.value)
   };
 
   return (
@@ -16,7 +15,7 @@ export const TypeForm = ({ tipo, setTipo }) => {
           <table className="table">
             <Form.Group>
               <tr>
-                <td>
+                <td className={`${tipo === "profesores" ? "soft-red-background" : "white-background"}`}>
                   <Form.Check
                     type="radio"
                     label="Profesor"
@@ -24,11 +23,10 @@ export const TypeForm = ({ tipo, setTipo }) => {
                     value="profesores"
                     checked={tipo === "profesores"}
                     onChange={handleType}
-                    className="custom-radio"
                     id="radio1"
                   />
                 </td>
-                <td>
+                <td className={`${tipo === "monitor_cea" ? "soft-red-background" : "white-background"}`}>
                   <Form.Check
                     type="radio"
                     label="Monitor CEA"
@@ -36,7 +34,6 @@ export const TypeForm = ({ tipo, setTipo }) => {
                     value="monitor_cea"
                     checked={tipo === "monitor_cea"}
                     onChange={handleType}
-                    className="custom-radio"
                     id="radio2"
                   />
                 </td>

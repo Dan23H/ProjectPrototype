@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import logo from ".././images/logo.ico";
 import "../../styles/Navbar.css";
+import { useContext } from "react";
+import { UserContext } from "../App";
 
-export const Navbar = ({ data }) => {
+export const Navbar = () => {
+  const { user } = useContext(UserContext)
   return (
     <nav className="navigation">
       <div className="left-side">
         <img src={logo} alt="Logo" className="logo" />
-        <div className="student">Estudiante: {data}</div>
+        <div className="student">Estudiante: {user}</div>
       </div>
       <div className="center-side">
         <ul>

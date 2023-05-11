@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { fakedata } from "../assets/fakedata"
 import { useNavigate } from "react-router-dom"
 import "../../styles/Login.css"
 import backgroundImage from '../images/uao-1.png';
 import img from '../../src/images/logocentro.png';
 import logo from "../../src/images/logo.ico"
+import { UserContext } from "../App";
 
 export const Loginform = () => {
     const [profile, setProfile] = useState('')
@@ -12,6 +13,7 @@ export const Loginform = () => {
     const [errorMessage, setErrorMessage] = useState('')
 
     const nav = useNavigate()
+    const {setUser} = useContext(UserContext)
 
     const handleProfile = (e) => {
         e.preventDefault()
@@ -32,7 +34,7 @@ export const Loginform = () => {
             const checking = fakedata.filter((usuario) => { return usuario.profile === profile && usuario.password === password })
             if (checking.length > 0) {
                 console.log("El usuario y contraseña coinciden.");
-                console.log(checking)
+                setUser(checking)
                 nav("/home")
             } else {
                 setProfile('')
