@@ -4,8 +4,7 @@ export const fakedata = [{
 },{
     "profile": "alfonso_paredes@uao.edu.co",
     "password": "12ad52A_s"
-},
-{
+},{
     "profile": "mateo",
     "password": "1"
 }]

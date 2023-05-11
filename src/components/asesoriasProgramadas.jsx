@@ -20,7 +20,7 @@ export const eventos = [
     title: 'Asesoría de Química',
     start: new Date(2023, 4, 18, 16, 0),
     end: new Date(2023, 4, 18, 17, 0),
-  },
+  }
 ];
 
 export const AsesoriasProgramadas = () => {

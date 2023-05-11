@@ -1,21 +1,21 @@
-import React, { createContext, useState } from "react"
+import React from "react"
 import { Route, Routes } from "react-router-dom"
 import { Login, Home } from "./pages"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MisAsesorias } from "./pages/misAsesorias";
+import { UserProvider } from "./context/UserProvider";
 
-export const UserContext = createContext()
+
 
 function App() {
-  const [user, setUser] = useState()
   return (
-    <UserContext.Provider value={{user, setUser}} >
+    <UserProvider>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/misAsesorias" element={<MisAsesorias />} />
       </Routes>
-    </UserContext.Provider>
+    </UserProvider>
 
   )
 }

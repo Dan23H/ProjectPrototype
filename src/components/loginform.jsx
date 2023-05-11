@@ -5,7 +5,7 @@ import "../../styles/Login.css"
 import backgroundImage from '../images/uao-1.png';
 import img from '../../src/images/logocentro.png';
 import logo from "../../src/images/logo.ico"
-import { UserContext } from "../App";
+import { UserContext } from "../context/UserContext";
 
 export const Loginform = () => {
     const [profile, setProfile] = useState('')
@@ -34,7 +34,7 @@ export const Loginform = () => {
             const checking = fakedata.filter((usuario) => { return usuario.profile === profile && usuario.password === password })
             if (checking.length > 0) {
                 console.log("El usuario y contraseña coinciden.");
-                setUser(checking)
+                setUser(checking[0])
                 nav("/home")
             } else {
                 setProfile('')
