@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import backgroundImage from '../images/uao-2.png';
 
 export const Home = () => {
-    const [type, setType] = useState('PROFESORES')
+    const [tipo, setTipo] = useState('PROFESORES')
     return (
         <>
             <div style={{
@@ -15,8 +15,8 @@ export const Home = () => {
                 textAlign: "center",
             }}>
                 <Navbar />
-                <TypeForm type={type} setType={setType} />
-                <HomeContent type={type} />
+                <TypeForm tipo={tipo} setTipo={setTipo} />
+                <HomeContent tipo={tipo} />
             </div>
         </>
     )

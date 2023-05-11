@@ -1,7 +1,7 @@
 import { Button } from 'react-bootstrap';
 import "../../styles/Home.css"
 
-export const HomeContent = ({ type }) => {
+export const HomeContent = ({ tipo }) => {
     const handleBuscar = (e) => {
         e.preventDefault()
         alert('holi')
