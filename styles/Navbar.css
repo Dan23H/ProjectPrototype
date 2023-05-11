@@ -1,0 +1,63 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+}
+
+.student {
+  font-weight: bold;
+}
+
+.center-side {
+  display: flex;
+  align-items: center;
+}
+
+.center-side ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.center-side ul li {
+  margin-right: 20px;
+}
+
+.center-side ul li:last-child {
+  margin-right: 0;
+}
+
+.center-side ul li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+}
+
+.right-side a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
