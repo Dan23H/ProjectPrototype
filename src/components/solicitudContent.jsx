@@ -71,6 +71,7 @@ export const SolicitudContent = () => {
         e.preventDefault()
         title == "" ? setTitle(asignatura) : title
         dia == "" ? setDia(1) : dia
+        mes == "" ? setMes(0) : mes
         let start = new Date(2023, mes, dia, horaInicio[0], parseInt(horaInicio[1]))
         let end = new Date(2023, mes, dia, horaFinal[0], parseInt(horaFinal[1]))
         await handleInfo(title, start, end)
