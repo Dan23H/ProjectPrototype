@@ -3,7 +3,7 @@ import { TypeForm, HomeContent, Navbar } from "../components"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import backgroundImage from '../images/uao-2.png';
 
-export const Home = () => {
+export const Home = ({name}) => {
     const [tipo, setTipo] = useState('PROFESORES')
     return (
         <>
@@ -14,7 +14,7 @@ export const Home = () => {
                 backgroundPosition: "center",
                 textAlign: "center",
             }}>
-                <Navbar />
+                <Navbar name={name}/>
                 <TypeForm tipo={tipo} setTipo={setTipo} />
                 <HomeContent tipo={tipo} />
             </div>

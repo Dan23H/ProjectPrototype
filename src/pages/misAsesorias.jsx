@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import backgroundImage from '../images/uao-2.png';;
 import '../../styles/asesorias.css';
 import { AsesoriasProgramadas} from '../components/asesoriasProgramadas'
-export const MisAsesorias = () => {
+export const MisAsesorias = ({name}) => {
     return (
         <>
         
@@ -14,7 +14,7 @@ export const MisAsesorias = () => {
                 backgroundPosition: "center",
                 textAlign: "center",
             }}>
-                <Navbar />
+                <Navbar name={name}/>
                 
                 <AsesoriasProgramadas />
                     

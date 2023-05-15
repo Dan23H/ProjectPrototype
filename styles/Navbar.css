@@ -21,11 +21,12 @@
 
 .student {
   font-weight: bold;
+  cursor:default;
 }
 
 .center-side {
   display: flex;
-  align-items: center;
+  margin-left: 5%;
 }
 
 .center-side ul {

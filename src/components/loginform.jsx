@@ -5,14 +5,23 @@ import logo from "../images/logo.ico"
 import google from "../images/google.png"
 import { useDispatch } from "react-redux";
 import { startGoogleAuth } from "../actions/auth";
+import { useNavigate } from "react-router-dom";
 
 const Loginform = () => {
-    
+    const nav = useNavigate()
     const dispatch = useDispatch()
-    const handleGoogleAuth = () => {
+    const wait = (seconds) => {
+        return new Promise((resolve) => {
+            setTimeout(resolve, seconds * 1000);
+        });
+    };
+
+    const handleGoogleAuth = async () => {
         dispatch(startGoogleAuth())
+        await wait(1)
+        nav("/home")
     }
-    
+
     return (
         <div style={{
             backgroundImage: `url(${backgroundImage})`,
@@ -31,8 +40,8 @@ const Loginform = () => {
                 <div className="img">
                     <img src={img} alt="Logo" />
                 </div>
-                <div style={{marginTop:"25%"}} >
-                    <button onClick={handleGoogleAuth}>Iniciar sesión {<img style={{height:"20px"}} src={google} alt="google"/>}</button>
+                <div style={{ marginTop: "25%" }} >
+                    <button onClick={handleGoogleAuth}>Iniciar sesión {<img style={{ height: "20px" }} src={google} alt="google" />}</button>
                 </div>
             </div>
         </div>
