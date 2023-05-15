@@ -136,6 +136,7 @@ export const SolicitudContent = () => {
                             <label className='red-label'>Mes</label>
                             <hr className='white-label' />
                             <select className="form-select" name="Mes" id="Mes" onChange={(event) => handleMes(event)}>
+                                <option value="">Select a Month</option>
                                 <option value="0">Enero</option>
                                 <option value="1">Febrero</option>
                                 <option value="2">Marzo</option>
