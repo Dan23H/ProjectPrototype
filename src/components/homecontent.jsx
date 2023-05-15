@@ -3,14 +3,12 @@ import "../../styles/Home.css"
 import { useNavigate } from 'react-router-dom';
 
 
-export const HomeContent = ({info}) => {
+export const HomeContent = () => {
     const nav = useNavigate()
 
     const handleBuscar = (e) => {
         e.preventDefault()
         alert('En desarrollo')
-        console.log(info)
-
     }
 
     const handleSolicitar = (e) => {
