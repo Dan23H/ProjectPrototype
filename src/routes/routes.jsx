@@ -1,5 +1,5 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import { Home, Login, Loading, MisAsesorias } from "../pages";
+import { Home, Login, Loading, MisAsesorias, Solicitud } from "../pages";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../actions/auth";
@@ -45,6 +45,7 @@ export const Routing = () => {
         <Route path="*" element={<Loading isLoggedIn={isLoggedIn} />} />
       )}
       {isLoggedIn ? ( <Route path="/misAsesorias" element={<MisAsesorias name={name} />} /> ) : (<></>)}
+      {isLoggedIn ? ( <Route path="/solicitud" element={<Solicitud name={name} />} /> ) : (<></>)}
       <Route path="/" element={<Navigate to="/login" replace />} />
     </Routes>
 )}
