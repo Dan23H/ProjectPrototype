@@ -15,7 +15,7 @@ export const SolicitudContent = () => {
     const [title, setTitle] = useState(asignatura)
     const nav = useNavigate()
 
-    const [mes, setMes] = useState(1)
+    const [mes, setMes] = useState(0)
     const [days, setDays] = useState([])
     const [limit, setLimit] = useState(0)
 
