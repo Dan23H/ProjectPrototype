@@ -1,2 +1,0 @@
-# ProjectPrototype
-Software Engineering
