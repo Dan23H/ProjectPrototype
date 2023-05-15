@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import logo from ".././images/logo.ico";
 import "../../styles/Navbar.css";
-import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import { useDispatch } from "react-redux";
+import { startGoogleLogout } from "../actions/auth";
 
 export const Navbar = () => {
-  const { user } = useContext(UserContext)
-  const student = `Estudiante: ${user.profile}`
-  console.log(user)
+  const dispatch = useDispatch()
+  const handleLogout = () => {
+    dispatch(startGoogleLogout())
+  }
   return (
     <nav className="navigation">
       <div className="left-side">
         <img src={logo} alt="Logo" className="logo" />
-        <div className="student">{student}</div>
+        <div className="student"></div>
       </div>
       <div className="center-side">
         <ul>
@@ -28,10 +29,8 @@ export const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="right-side">
-        <Link to="/">
-          <span>Cerrar Sesion</span>
-        </Link>
+      <div className="right-side" style={{cursor:"pointer"}}>
+        <span onClick={handleLogout}>Cerrar Sesion</span>
       </div>
     </nav>
   );
