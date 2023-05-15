@@ -1,13 +1,18 @@
 import { Button } from 'react-bootstrap';
 import "../../styles/Home.css"
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
-export const HomeContent = () => {
-    const [asignatura, setAsignatura] = useState("")
-    const [asesor, setAsesor] = useState("")
-    const [horario, setHorario] = useState("")
+export const SolicitudContent = () => {
+    const [asignatura, setAsignatura] = useState("Asignatura 1")
+    const [asesor, setAsesor] = useState("Asesor 1")
+    const [horario, setHorario] = useState("Horario 1")
+    const [info, setInfo] = useState({
+        "asesor": asesor,
+        "asignatura": asignatura,
+        "horario": horario
+    })
     const nav = useNavigate()
     const handleAsignatura = (e) => {
         setAsignatura(e.target.value)
@@ -18,14 +23,14 @@ export const HomeContent = () => {
     const handleHorario = (e) => {
         setHorario(e.target.value)
     }
-    const handleEnviar = (e) => {
+    const handleEnviar = async (e) => {
         e.preventDefault()
-        setInfo({
+        await setInfo({
             "asesor": asesor,
             "asignatura": asignatura,
             "horario": horario
         })
-        nav("/home")
+        nav("/home", info)
     }
     return (
         <div className="box">
@@ -44,7 +49,7 @@ export const HomeContent = () => {
                         </td>
                         <td>
                             <label className='red-label'>Asesor</label>
-                            <hr className='white-label'/>
+                            <hr className='white-label' />
                             <select className="form-select" name="Asesor" id="Asesor" onChange={(event) => handleAsesor(event)}>
                                 <option value="Asesor 1">Asesor 1</option>
                                 <option value="Asesor 2">Asesor 2</option>
@@ -54,7 +59,7 @@ export const HomeContent = () => {
                         </td>
                         <td>
                             <label className='red-label'>Horario</label>
-                            <hr className='white-label'/>
+                            <hr className='white-label' />
                             <select className="form-select" name="Horario" id="Horario" onChange={(event) => handleHorario(event)}>
                                 <option value="Horario 1">Horario 1</option>
                                 <option value="Horario 2">Horario 2</option>
@@ -65,7 +70,7 @@ export const HomeContent = () => {
                     </tr>
                 </tbody>
             </table>
-            <label className='red-label'>Horarios Disponibles</label>
+            <label className='red-label'>{`${info.asesor} ${info.asignatura} ${info.horario}`}</label>
             <br />
             <Button variant="success" onClick={(event) => handleEnviar(event)}>Solicitar</Button>
         </div>

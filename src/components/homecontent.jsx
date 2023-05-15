@@ -3,12 +3,13 @@ import "../../styles/Home.css"
 import { useNavigate } from 'react-router-dom';
 
 
-export const HomeContent = () => {
+export const HomeContent = ({info}) => {
     const nav = useNavigate()
 
     const handleBuscar = (e) => {
         e.preventDefault()
         alert('En desarrollo')
+        console.log(info)
         // Comando para buscar en mongoDB
     }
     const handleSolicitar = (e) => {

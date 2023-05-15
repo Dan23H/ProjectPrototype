@@ -1,4 +1,4 @@
-import { Navbar } from "../components"
+import { Navbar, SolicitudContent } from "../components"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import backgroundImage from '../images/uao-2.png';
 
