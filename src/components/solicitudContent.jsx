@@ -6,7 +6,7 @@ import { agendaContext } from '../context/agendaContext';
 
 
 export const SolicitudContent = () => {
-    const {info, handleInfo} = useContext(agendaContext)
+    const {handleInfo} = useContext(agendaContext)
     const [asignatura, setAsignatura] = useState("Asignatura 1")
     const [asesor, setAsesor] = useState("Asesor 1")
     const [horaInicio, setHoraInicio] = useState([0, 0])
@@ -56,7 +56,6 @@ export const SolicitudContent = () => {
             diasMes = 31;
           }
         setLimit(diasMes);
-        console.log(info)
     }
 
     useEffect(() => {
@@ -68,13 +67,15 @@ export const SolicitudContent = () => {
       }, [limit]);
 
       
-    const handleEnviar = (e) => {
+    const handleEnviar = async (e) => {
         e.preventDefault()
         title == "" ? setTitle(asignatura) : title
+        dia == "" ? setDia(1) : dia
         let start = new Date(2023, mes, dia, horaInicio[0], parseInt(horaInicio[1]))
         let end = new Date(2023, mes, dia, horaFinal[0], parseInt(horaFinal[1]))
-        handleInfo(title, start, end)
-        console.log(info)
+        await handleInfo(title, start, end)
+        alert("Solicitud enviada correctamente")
+        nav("/home")
     }
 
     return (
