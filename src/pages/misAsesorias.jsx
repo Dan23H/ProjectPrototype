@@ -6,7 +6,6 @@ import { AsesoriasProgramadas} from '../components/asesoriasProgramadas'
 export const MisAsesorias = ({name}) => {
     return (
         <>
-        
             <div style={{
                 backgroundImage: `url(${backgroundImage})`,
                 height: "100vh",
@@ -15,11 +14,7 @@ export const MisAsesorias = ({name}) => {
                 textAlign: "center",
             }}>
                 <Navbar name={name}/>
-                
                 <AsesoriasProgramadas />
-                    
-                
-                
             </div>
         </>
     )

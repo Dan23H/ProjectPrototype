@@ -31,7 +31,6 @@
   .soft-red-background {
     color: red;
     background-color: rgb(255, 155, 155);
-
   }
 
   input[type="radio"]:checked {
@@ -39,6 +38,13 @@
     border-color: rgb(255,0,0);
   }
   
+  .sel{
+    cursor: default
+  }
+
+  .non {
+    cursor: pointer
+  }
 
   .white-background {
     color: white;
