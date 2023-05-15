@@ -1,8 +1,10 @@
 import { Navbar, SolicitudContent } from "../components"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import backgroundImage from '../images/uao-2.png';
+import { useState } from "react";
 
 export const Solicitud = ({name}) => {
+    const [info, setInfo] = useState({})
     return (
         <>
             <div style={{
@@ -12,8 +14,8 @@ export const Solicitud = ({name}) => {
                 backgroundPosition: "center",
                 textAlign: "center",
             }}>
-                <Navbar name={name}/>
-                <SolicitudContent />
+                <Navbar name={name} info={info}/>
+                <SolicitudContent info={info} setInfo={setInfo} />
             </div>
         </>
     )

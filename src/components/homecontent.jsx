@@ -10,12 +10,14 @@ export const HomeContent = ({info}) => {
         e.preventDefault()
         alert('En desarrollo')
         console.log(info)
-        // Comando para buscar en mongoDB
+
     }
+
     const handleSolicitar = (e) => {
         e.preventDefault()
         nav("/solicitud")
     }
+    
     return (
         <div className="box">
             <table className="table">

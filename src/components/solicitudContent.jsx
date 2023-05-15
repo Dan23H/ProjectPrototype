@@ -4,15 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 
-export const SolicitudContent = () => {
+export const SolicitudContent = ({info, setInfo}) => {
     const [asignatura, setAsignatura] = useState("Asignatura 1")
     const [asesor, setAsesor] = useState("Asesor 1")
     const [horario, setHorario] = useState("Horario 1")
-    const [info, setInfo] = useState({
-        "asesor": asesor,
-        "asignatura": asignatura,
-        "horario": horario
-    })
     const nav = useNavigate()
     const handleAsignatura = (e) => {
         setAsignatura(e.target.value)
@@ -23,15 +18,20 @@ export const SolicitudContent = () => {
     const handleHorario = (e) => {
         setHorario(e.target.value)
     }
-    const handleEnviar = async (e) => {
+    const handleEnviar = (e) => {
         e.preventDefault()
-        await setInfo({
+        setInfo({
             "asesor": asesor,
             "asignatura": asignatura,
             "horario": horario
         })
-        nav("/home", info)
     }
+    useEffect(() => {
+        if(info != {}){
+            nav("/home", info);
+        }
+        
+      }, [info]);
     return (
         <div className="box">
             <table className="table">
